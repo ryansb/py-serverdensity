@@ -1,6 +1,11 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.5 (17-07-2012)
+------------------
+
+ - Minor version bump to change Github url to https://github.com/serverdensity/py-serverdensity
+
 1.0.4 (29-06-2012)
 ------------------
 
