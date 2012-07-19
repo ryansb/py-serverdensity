@@ -1,6 +1,11 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.6 (19-07-2012)
+------------------
+
+ - Added devices.count, devices.addAggregate, devices.editAggregate, users.addPhone, users.addEmail, users.deletePhone and users.deleteEmail methods
+
 1.0.5 (17-07-2012)
 ------------------
 
