@@ -13,7 +13,7 @@ GETS = {
     ),
     'devices': (
         'getByGroup', 'getByHostName', 'getById', 'getByIp', 'getByName',
-        'list', 'listGroups',
+        'list', 'listGroups', 'count',
     ),
     'metrics': (
         'getLatest', 'getRange', 'list',
@@ -34,13 +34,13 @@ POSTS = {
         'pause', 'resume',
     ),
     'devices': (
-        'add', 'addGroup', 'delete', 'rename',
+        'add', 'addGroup', 'delete', 'rename', 'addAggregate', 'editAggregate',
     ),
     'metrics': (
         'postback',
     ),
     'users': (
-        'add', 'delete',
+        'add', 'delete', 'addPhone', 'addEmail', 'deletePhone', 'deleteEmail',
     ),
 }
 
