@@ -1,6 +1,12 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.7 (13-08-2012)
+------------------
+
+ - README updated to reflect params usage (thanks to https://github.com/bassdread)
+ - Fix to update GET params to include existing params (thanks to https://github.com/israelshirk)
+
 1.0.6 (19-07-2012)
 ------------------
 
