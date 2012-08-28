@@ -3,7 +3,7 @@
 
 import os
 cwd = os.path.dirname(__file__)
-__version__ = open(os.path.join(cwd, 'serverdensity', 'version.txt'), 'r').read().strip()
+__version__ = open(os.path.join(cwd, 'serverdensity', 'api', 'version.txt'), 'r').read().strip()
 
 try:
         from setuptools import setup, find_packages
@@ -17,11 +17,11 @@ setup(
     long_description=open('README.rst').read(),
     version=__version__,
     author='Wes Mason',
-    author_email='wes@boxedice.com',
+    author_email='wes@serverdensity.com',
     url='https://github.com/serverdensity/py-serverdensity',
     packages=find_packages(exclude=['ez_setup']),
     install_requires=open('requirements.txt').readlines(),
-    package_data={'serverdensity': ['version.txt']},
+    package_data={'serverdensity/api': ['version.txt']},
     include_package_data=True,
     license='BSD'
 )
