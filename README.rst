@@ -9,10 +9,8 @@ The library provides access to all the GET and POST methods in the SD API, takes
 
 Installation
 ------------
-The library can be installed from PyPi using ``easy_install`` or ``pip``::
+The library can be installed from PyPi using ``pip``::
 
-    easy_install py-serverdensity
-    # or
     pip install py-serverdensity
 
 Or cloned from `Github <http://www.github.com/>`_ using ``git``::
