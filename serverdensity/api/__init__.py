@@ -62,13 +62,12 @@ BASE_URL = 'https://api.serverdensity.com/%(version)s/%(section)s/%(method)s'
 class SDApi(object):
     """Lightweight ServerDensity.com API wrapper
     """
-    def __init__(self, account, username, password, api_key, name=None,
+    def __init__(self, account, username, password, api_key=None, name=None,
                  gets=GETS, posts=POSTS, base_url=BASE_URL,
                  api_version=API_VERSION):
         self._account = account
         self._username = username
         self._password = password
-        self._api_key = api_key
         self._name = name
         self._gets = gets
         self._posts = posts
@@ -76,8 +75,6 @@ class SDApi(object):
         self._api_version = api_version
 
     def _request(self, method, data={}, params={}):
-        if 'apiKey' not in params:
-            params['apiKey'] = self._api_key
         if 'account' not in params:
             params['account'] = self._account
 
@@ -113,7 +110,6 @@ class SDApi(object):
                 account=self._account,
                 username=self._username,
                 password=self._password,
-                api_key=self._api_key,
                 name=attr_name
             )
         else:
