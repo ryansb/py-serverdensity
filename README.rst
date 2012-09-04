@@ -32,7 +32,7 @@ Once installed just import the class ``SDApi`` from the ``serverdensity.api`` mo
     )
     api.alerts.getLast()
     try:
-	api.devices.getByHostname({'hostName': 'myserver.somedomain.com'})
+	api.devices.getByHostName({'hostName': 'myserver.somedomain.com'})
 	api.devices.getById({},{'deviceId':'device_id'})
     except SDServiceError, e:
         print 'Error:', e
