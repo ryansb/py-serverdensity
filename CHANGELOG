@@ -1,6 +1,12 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.9 (06-10-2012)
+------------------
+
+ - Added alerts.add and alerts.delete methods.
+ - Made a few PEP8 compliant tweaks.
+
 1.0.7 (13-08-2012)
 ------------------
 
