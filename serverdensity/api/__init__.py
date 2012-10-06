@@ -6,9 +6,10 @@ except ImportError:
     import json
 
 
-_CWD = os.path.dirname(__file__)
 def get_version_string():
-    return open(os.path.join(_CWD, 'version.txt'), 'r').read().strip()
+    return open(os.path.join(os.path.dirname(__file__),
+                'version.txt'), 'r').read().strip()
+
 
 def get_version():
     return get_version_string().split('.')
@@ -43,7 +44,7 @@ GETS = {
 
 POSTS = {
     'alerts': (
-        'pause', 'resume',
+        'pause', 'resume', 'add', 'delete'
     ),
     'devices': (
         'add', 'addGroup', 'delete', 'rename', 'addAggregate', 'editAggregate',
@@ -58,6 +59,7 @@ POSTS = {
 
 API_VERSION = '1.4'
 BASE_URL = 'https://api.serverdensity.com/%(version)s/%(section)s/%(method)s'
+
 
 class SDApi(object):
     """Lightweight ServerDensity.com API wrapper
@@ -92,8 +94,8 @@ class SDApi(object):
             request = requests.get(url, params=params, auth=(self._username,
                 self._password))
         elif method in self._posts[self._name]:
-            request = requests.post(url, data=data, params=params, auth=(self._username,
-                self._password))
+            request = requests.post(url, data=data, params=params, auth=(
+                                    self._username, self._password))
         else:
             raise AttributeError(u'No method named %s' % (method,))
 
@@ -102,7 +104,6 @@ class SDApi(object):
             raise SDServiceError(response['error']['message'],
                                  response=response)
         return response
-
 
     def __getattr__(self, attr_name):
         if self._name is None:
@@ -116,6 +117,7 @@ class SDApi(object):
             def wrapper(*args, **kwargs):
                 return self._request(attr_name, *args, **kwargs)
             return wrapper
+
 
 class SDServiceError(Exception):
     """Container for API errors from serverdensity.com
