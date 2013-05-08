@@ -112,7 +112,7 @@ class SDApi(object):
                 username=self._username,
                 password=self._password,
                 name=attr_name,
-                base_url=self.base_url,
+                base_url=self._base_url,
                 gets=self._gets,
                 posts=self._posts,
                 api_version=self._api_version
