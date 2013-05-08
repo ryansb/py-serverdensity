@@ -1,6 +1,11 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.10 (08-05-2013)
+------------------
+
+ - Fix object chaining which would lose the an overridden base URI.
+
 1.0.9 (06-10-2012)
 ------------------
 
