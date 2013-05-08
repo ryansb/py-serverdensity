@@ -107,8 +107,16 @@ class SDApi(object):
 
     def __getattr__(self, attr_name):
         if self._name is None:
-            self._name = attr_name
-            return self
+            return super(SDApi, self).__self_class__(
+                account=self._account,
+                username=self._username,
+                password=self._password,
+                name=attr_name,
+                base_url=self.base_url,
+                gets=self._gets,
+                posts=self._posts,
+                api_version=self._api_version
+            )
         else:
             def wrapper(*args, **kwargs):
                 return self._request(attr_name, *args, **kwargs)
