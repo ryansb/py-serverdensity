@@ -99,6 +99,9 @@ class SDApi(object):
         else:
             raise AttributeError(u'No method named %s' % (method,))
 
+        if request.status_code >= 500:
+            raise SDServiceError("An error with http status code {} "
+                                 "occurred.".format(request.status_code))
         response = json.loads(request.content)
         if response['status'] == 2:
             raise SDServiceError(response['error']['message'],
