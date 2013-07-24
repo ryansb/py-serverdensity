@@ -1,6 +1,11 @@
 ChangeLog for py-serverdensity
 ======================
 
+1.0.11 (24-07-2013)
+------------------
+
+ - HTTP errors are now raised as SDServiceError exceptions (thanks to https://github.com/ryansb)
+
 1.0.10 (08-05-2013)
 ------------------
 
